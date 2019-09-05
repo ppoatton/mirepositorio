@@ -12,10 +12,9 @@
     "nodemon": "^1.19.2"
   },
   "scripts": {
-    "node-start": "node .",
-    "start": "node src/index.js",
-    "dev": "node src",
-    "build": "@now/cvweb/src"
+    "start": "node src",
+    "dev": "node ./"
+    
   },
   "keywords": [],
   "author": "",

@@ -1,19 +1,18 @@
 {
+	"name": "cvalberto",
+	"alias": "cvalberto.com",
+	"env": {
+		"NODE_ENV": "production"
+	},
+	
     "version": 2,
     "builds": [
-        {
-        "src": "/src/*.js",
-        "use": "@now/node"
-        },
-        {
-        "src": "/src/routes/*.js",
-        "use": "@now/node"
-        }
+        { "src": "/src/*.js", "use": "@now/node"  } ,
+        { "src": "/src/views/*.ejs", "use": "@now/static" }
     ],
     "routes":[
-        {
-            "src": "/src/(.*)",
-            "dest": "/src/$1"
-        }
+        { "src": "/.*", "dest": "/src/index.js"   },
+        { "src": "/.*", "dest": "/src/index.ejs"   },
+        { "src": "/.*", "dest": "/src/views/index.ejs"   }
     ]
 }

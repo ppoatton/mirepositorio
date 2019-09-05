@@ -6,8 +6,8 @@ router.get('/', (req, res) => {
 });
 
 
-router.get('/certificados', (req, res) => {
+/* router.get('/certificados', (req, res) => {
   res.render('certificados', { title: 'certificados y diplomas' });
-});
+}); */
 
 module.exports = router;
