@@ -1,0 +1,24 @@
+{
+  "name": "cvweb",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "@now/node": "^0.12.8",
+    "nodemon": "^1.19.2"
+  },
+  "scripts": {
+    "node-start": "node .",
+    "start": "node src/index.js",
+    "dev": "node src",
+    "build": "@now/cvweb/src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
