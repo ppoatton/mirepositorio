@@ -4,16 +4,13 @@
         {
         "src": "/src/*.js",
         "use": "@now/node"
-        },
-        {
-        "src": "/src/routes/*.js",
-        "use": "@now/node"
         }
+        
     ],
     "routes":[
         {
             "src": "/src/(.*)",
-            "dest": "/src/$1"
+            "dest": "/$1"
         }
     ]
 }
