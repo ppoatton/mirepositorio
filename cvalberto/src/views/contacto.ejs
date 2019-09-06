@@ -32,7 +32,8 @@
                         <input id="idInCE" class="form-control" type="email" placeholder="Email">
                      </div>
                      <div class="form-group">
-                        <textarea id="idInMen" class="form-control" name="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                        <textarea id="idInMen" class="form-control" name="" cols="30" rows="10"
+                           placeholder="Mensaje"></textarea>
                      </div>
                      <div class="form-group">
                         <button id="idBtnEnviar" class="btn btn-primary btn-block">
@@ -47,6 +48,34 @@
    </div>
 
    <% include parciales/footer %>
+
+   <script >
+      //const axios = require("axios");
+      document.getElementById("idBtnEnviar").addEventListener("click", function () {
+         let strCorreo = document.getElementById("idInCE").value;
+         let strMensaje = document.getElementById("idInMen").value;
+
+         if (strCorreo != "" && strMensaje != "") {
+            let datos = {
+               c: strCorreo,
+
+               m: strMensaje
+            };
+            axios.post('/api/contacto', datos)
+               .then(function (response) {
+                  document.getElementById("idInCE").value = "";
+
+                  document.getElementById("idInMen").value = "";
+                  alert("Gracias por escribir, en breve me pondre en contacto");
+               }).catch(function (error) {
+                  console.log(error);
+               });
+         } else {
+            alert("Por fovor rellenar todos los campos");
+         }
+      });
+   </script>
+   
 </body>
 
 </html>

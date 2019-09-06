@@ -35,7 +35,7 @@ const oEmail = new email({
   }
 });
 
-// correo
+// configuracion para el correo
 app.post('/api/contacto', function (req, res, next) {
   let email ={
       from:"ppoatton@hotmail.com",
