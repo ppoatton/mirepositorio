@@ -1,3 +1,5 @@
+const axios = require("axios");
+
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function () { scrollFunction() };
 
@@ -15,3 +17,27 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
+document.getElementById("idBtnEnviar").addEventListener("click",function(){
+  let strCorreo = document.getElementById("idInCE").value;
+  let strMensaje = document.getElementById("idInMen").value;
+
+  if(strCorreo != "" &&  strMensaje != ""){
+      let datos ={
+          c: strCorreo,
+          
+          m:strMensaje
+      };
+      axios.post('/api/contacto',datos)
+      .then(function(response){
+          document.getElementById("idInCE").value="";
+         
+          document.getElementById("idInMen").value="";
+          alert("Gracias por escribir, en breve me pondre en contacto");
+      }).catch(function(error){
+          console.log(error);
+      });
+  }else{
+      alert("Por fovor rellenar todos los campos");
+  }
+
+});
