@@ -108,3 +108,24 @@ body {
     margin-top: 7rem;
   }
 }
+
+.texto-borde {
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke: 3px black;
+}
+
+.texto-borde-2 { 
+  color: #fff; 
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 45px;
+  letter-spacing: 0;
+  text-shadow: -3px -3px 3px rgb(0, 0, 0), 3px -3px 3px #0000DF, -3px 3px 3px #0000DF, 3px 3px 3px #0000DF;
+}
+
+.texto-borde-3 {
+  color: #fff; 
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  letter-spacing: 0;
+  text-shadow: -3px -3px 3px rgb(0, 0, 0), 3px -3px 3px rgb(100, 247, 124), -3px 3px 3px rgb(0, 223, 100), 3px 3px 3px rgb(0, 223, 86);
+}

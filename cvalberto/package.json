@@ -14,7 +14,6 @@
   "scripts": {
     "start": "node src",
     "dev": "node ./"
-    
   },
   "keywords": [],
   "author": "",
