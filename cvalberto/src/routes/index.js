@@ -10,4 +10,8 @@ router.get('/escolaridad', (req, res) => {
   res.render('escolaridad', { title: 'escolaridad' });
 });
 
+router.get('/contacto', (req, res) => {
+  res.render('contacto', { title: 'contacto' });
+});
+
 module.exports = router;
