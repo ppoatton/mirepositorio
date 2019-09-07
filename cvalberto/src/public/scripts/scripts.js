@@ -27,7 +27,7 @@ document.getElementById("idBtnEnviar").addEventListener("click",function(){
           
           m:strMensaje
       };
-      axios.post('/api/contacto',datos)
+      axios.post('/src/views/contacto',datos)
       .then(function(response){
           document.getElementById("idInCE").value="";
          

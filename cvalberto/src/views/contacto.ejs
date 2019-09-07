@@ -27,7 +27,7 @@
                   <h3>Contactame</h3>
                </div>
                <div class="card-body">
-                  <form action="">
+                  <form action="send" method="POST">
                      <div class="form-group">
                         <input id="idInCE" class="form-control" type="email" placeholder="Email">
                      </div>
@@ -36,7 +36,7 @@
                            placeholder="Mensaje"></textarea>
                      </div>
                      <div class="form-group">
-                        <button id="idBtnEnviar" class="btn btn-primary btn-block">
+                        <button type="submit" id="idBtnEnviar" class="btn btn-primary btn-block">
                            Enviar
                         </button>
                      </div>
@@ -49,8 +49,8 @@
 
    <% include parciales/footer %>
 
-   <script >
-      //const axios = require("axios");
+   <!-- <script >
+      const axios = require("axios");
       document.getElementById("idBtnEnviar").addEventListener("click", function () {
          let strCorreo = document.getElementById("idInCE").value;
          let strMensaje = document.getElementById("idInMen").value;
@@ -61,7 +61,7 @@
 
                m: strMensaje
             };
-            axios.post('/api/contacto', datos)
+            axios.post('/contacto', datos)
                .then(function (response) {
                   document.getElementById("idInCE").value = "";
 
@@ -74,7 +74,7 @@
             alert("Por fovor rellenar todos los campos");
          }
       });
-   </script>
+   </script> -->
    
 </body>
 
