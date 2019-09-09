@@ -40,11 +40,12 @@ app.post('/send', async function (req, res, next) {
    console.log(req.body);
    const output = `
            <div>
-           <p>Correo: ${req.body.c}</p>         
-           <p>Mensaje: ${req.body.m}</p>
+           <p>Correo: ${req.body.correo}</p>         
+           <p>Mensaje: ${req.body.mensaje}</p>
            </div>
        `
-   
+
+       
 
    // create reusable transporter object using the default SMTP transport
    let transporter = nodemailer.createTransport({
@@ -76,6 +77,7 @@ app.post('/send', async function (req, res, next) {
    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
    // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 
+   res.render('contacto',{ title: 'contacto' });
 });
 
 // listening the Server
