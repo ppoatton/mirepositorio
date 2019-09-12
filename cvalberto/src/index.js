@@ -44,9 +44,7 @@ app.post('/send', async function (req, res, next) {
            <p>Mensaje: ${req.body.mensaje}</p>
            </div>
        `
-
-       
-
+      
    // create reusable transporter object using the default SMTP transport
    let transporter = nodemailer.createTransport({
       host: 'smtp.live.com',
@@ -77,7 +75,7 @@ app.post('/send', async function (req, res, next) {
    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
    // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 
-   res.render('contacto',{ title: 'contacto' });
+   res.render('contacto',{enviado : 'true'});
 });
 
 // listening the Server
