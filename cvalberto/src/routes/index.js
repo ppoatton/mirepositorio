@@ -11,7 +11,7 @@ router.get('/escolaridad', (req, res) => {
 });
 
 router.get('/contacto', (req, res) => {
-  res.render('contacto', { title: 'contacto' });
+  res.render('contacto', { enviado: 'noenviadoaun' });
 });
 
 module.exports = router;

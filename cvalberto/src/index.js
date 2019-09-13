@@ -44,7 +44,7 @@ app.post('/send', async function (req, res, next) {
            <p>Mensaje: ${req.body.mensaje}</p>
            </div>
        `
-      
+
    // create reusable transporter object using the default SMTP transport
    let transporter = nodemailer.createTransport({
       host: 'smtp.live.com',
@@ -54,19 +54,25 @@ app.post('/send', async function (req, res, next) {
          user: "ppo-dev@outlook.es", // generated ethereal user
          pass: "alberto16586" // generated ethereal password
       },
-      tls:{
+      tls: {
          rejectUnauthorized: false
       }
    });
 
-   // send mail with defined transport object
-   let info = await transporter.sendMail({
+   var mailoptions = {
       from: '"Nodemailer contact" <ppo-dev@outlook.es>', // sender address
       to: 'ppoatton10@gmail.com', // list of receivers
       subject: 'Hello ✔', // Subject line
       text: 'Hello world?', // plain text body
       html: output // html body
-   });
+   };
+
+
+   // send mail with defined transport object
+   let info = await transporter.sendMail(mailoptions)  ;
+
+   //transporter.then(success => console.log('success: ', success));
+   //transporter.catch(error => console.log('error: ', error));
 
    console.log('Message sent: %s', info.messageId);
    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
@@ -75,7 +81,10 @@ app.post('/send', async function (req, res, next) {
    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
    // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 
-   res.render('contacto',{enviado : 'true'});
+   //res.json({enviado:"true"});
+   //var enviado = 'mensaje enviado con exito';
+   res.render('contacto', { enviado: 'enviado' });
+
 });
 
 // listening the Server
